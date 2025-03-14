@@ -29,3 +29,8 @@
 
 en:
   hello: "Hello world"
+  activerecord:
+    models:
+      ai_chat:
+        one: AI Chat
+        other: AI Chats
