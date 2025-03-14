@@ -11,8 +11,10 @@
 // Configuration
 @import "config/variables";
 @import "config/reset";
+@import "config/animations";
 
 // Components
+@import "components/flash";
 @import "components/navbar";
 @import "components/session";
 @import "components/btn";
