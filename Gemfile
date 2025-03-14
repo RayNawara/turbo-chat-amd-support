@@ -51,6 +51,8 @@ group :development, :test do
   gem "rubocop-rails-omakase", require: false
 
   gem "rspec-rails", "~> 7.0.0"
+  gem "factory_bot_rails", "~> 6.4"
+  gem "shoulda-matchers", "~> 6.4"
 end
 
 group :development do
@@ -67,3 +69,8 @@ gem "bootstrap", "~> 5.3"
 gem "cssbundling-rails", "~> 1.4"
 
 gem "simple_form", "~> 5.3"
+
+gem "langchainrb", "~> 0.19.4"
+gem "faraday", "~> 2.12"
+
+gem "simple_command", "~> 1.0"
