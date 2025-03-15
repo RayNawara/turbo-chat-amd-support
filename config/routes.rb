@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :ai_chats, path: 'ai'
+  resources :ai_chats, path: 'ai' do
+    member do
+      post :ask
+    end
+  end
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
