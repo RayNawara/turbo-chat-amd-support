@@ -63,7 +63,7 @@ class CreateAiChatMessageService
 
     ai_message
   rescue StandardError
-      # notify_error
+    # notify_error
   end
 
   private

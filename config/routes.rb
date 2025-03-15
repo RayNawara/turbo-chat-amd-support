@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :ai_chats, path: 'ai' do
+  resources :ai_chats, path: "ai" do
     member do
       post :ask
     end
