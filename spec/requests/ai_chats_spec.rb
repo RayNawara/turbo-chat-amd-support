@@ -85,12 +85,7 @@ RSpec.describe "AiChats", type: :request do
   describe "GET /new" do
     let(:action) { -> { get "/ai/new" } }
 
-    context 'when user is not logged in' do
-      it 'redirects to the login page' do
-        action.call
-        expect(response).to redirect_to(new_user_session_path)
-      end
-    end
+    it_behaves_like 'a not logged user'
 
     context 'when user is logged in' do
       before do
@@ -118,12 +113,7 @@ RSpec.describe "AiChats", type: :request do
     let(:action) { -> { post "/ai", params: } }
     let(:params) { { prompt: "Hello", ai_model_name: "llama3.2" } }
 
-    context 'when user is not logged in' do
-      it 'redirects to the login page' do
-        action.call
-        expect(response).to redirect_to(new_user_session_path)
-      end
-    end
+    it_behaves_like 'a not logged user'
 
     context 'when user is logged in' do
       before do
@@ -161,6 +151,28 @@ RSpec.describe "AiChats", type: :request do
           action.call
           expect(response).to render_template(:new)
         end
+      end
+    end
+  end
+
+  describe "DELETE /destroy" do
+    let(:action) { -> { delete "/ai/#{ai_chat.id}" } }
+    let!(:ai_chat) { create(:ai_chat, user:) }
+
+    it_behaves_like 'a not logged user'
+
+    context 'when user is logged in' do
+      before do
+        login_as user
+      end
+
+      it 'destroys the chat' do
+        expect { action.call }.to change { AiChat.count }.by(-1)
+      end
+
+      it 'shows a flash message' do
+        action.call
+        expect(flash[:notice]).to eq("AI chat `#{ai_chat.title}` was successfully destroyed.")
       end
     end
   end
