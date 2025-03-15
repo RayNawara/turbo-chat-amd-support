@@ -37,5 +37,10 @@ module AiChats
                                                   content: answer_chunk)
 
     end
+
+    # It sends an error message to the client, to be shown in the user notification area
+    def notify_error(message:)
+      Turbo::StreamsChannel.broadcast_replace_to([ai_chat.user, "notifications"], target: "ai_chat_#{ai_chat&.id || ai_chat_id}_notification", partial: "layouts/error_notification", locals: { message: })
+    end
   end
 end

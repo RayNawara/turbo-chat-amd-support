@@ -47,7 +47,7 @@ class CreateAiChatMessageService
     errors.add(:prompt, "is required") if prompt.blank?
 
     if errors.any?
-      # notify_error
+      notify_error(message: errors.full_messages.to_sentence)
       return
     end
 
@@ -71,8 +71,10 @@ class CreateAiChatMessageService
     ai_message.update(answer: answer_chunks.join)
 
     ai_message
-  rescue StandardError
-    # notify_error
+  rescue StandardError => e
+    remove_spinner
+    errors.add(:generic, e.message)
+    notify_error(message: e.message)
   end
 
   private
