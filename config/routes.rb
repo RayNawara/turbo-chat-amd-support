@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   resources :ai_chats, path: "ai" do
     resources :ai_messages, only: [ :create ], path: "messages" do
       member do
-        post :ask
+        patch :exclude
+        patch :restore
+        delete :destroy
       end
     end
   end
