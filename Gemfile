@@ -75,3 +75,6 @@ gem "langchainrb", "~> 0.19.4"
 gem "faraday", "~> 2.12"
 
 gem "simple_command", "~> 1.0"
+
+gem "redcarpet", "~> 3.6"
+gem "rouge", "~> 4.5"

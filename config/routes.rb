@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   resources :ai_chats, path: "ai" do
-    member do
-      post :ask
+    resources :ai_messages, only: [ :create ], path: "messages" do
+      member do
+        post :ask
+      end
     end
   end
   devise_for :users
