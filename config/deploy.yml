@@ -64,8 +64,6 @@ builder:
 accessories:
   ollama:
     image: ollama/ollama
-    hosts:
-      - ollama.internal
     port: 11434
     volumes:
       - ollama:/root/.ollama
