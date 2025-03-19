@@ -64,6 +64,7 @@ builder:
 accessories:
   ollama:
     image: ollama/ollama
+    roles: ollama
     port: 11434
     volumes:
       - ollama:/root/.ollama
