@@ -92,13 +92,7 @@ class CreateAiChatMessageService
   # The LLM client.
   # @return [Langchain::LLM::Ollama] the LLM client
   def llm
-    ollama_url = if Rails.env.production?
-                   ENV['OLLAMA_URL'] || "http://ollama.internal:11434" # Use env var or default
-                 else
-                   "http://localhost:11434" # Development
-                 end
-
-    @llm ||= Langchain::LLM::Ollama.new(url: ollama_url, default_options: { chat_model: DEFAULT_MODEL_NAME })
+    @llm ||= Langchain::LLM::Ollama.new(url: "http://localhost:11434", default_options: { chat_model: DEFAULT_MODEL_NAME })
   end
 
   # Find or create the AiChat on which add the AiMessage.

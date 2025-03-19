@@ -1,3 +1,4 @@
+<% require "dotenv"; Dotenv.load(".env") %>
 # Name of your application. Used to uniquely configure containers.
 service: turbo_chat
 
@@ -60,12 +61,12 @@ asset_path: /rails/public/assets
 # Configure the image builder.
 builder:
   arch: amd64
+  context: .
 
 accessories:
   ollama:
     image: ollama/ollama
-    roles:
-      - ollama
     port: 11434
     volumes:
       - ollama:/root/.ollama
+    host: 45.159.231.79
