@@ -78,3 +78,4 @@ gem "simple_command", "~> 1.0"
 
 gem "redcarpet", "~> 3.6"
 gem "rouge", "~> 4.5"
+gem "dotenv-rails"
