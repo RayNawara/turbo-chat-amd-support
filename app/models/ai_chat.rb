@@ -7,7 +7,7 @@ class AiChat < ApplicationRecord
 
   SUPPORTED_AI_MODELS = {
     text: %w[deepseek-r1 llama3.2 llama3.1 llama3 mistral openhermes2.5-mistral qwen2.5-coder gemma2],
-    image: %w[sdxl-turbo sdxl-anime]
+    image: %w[anythingV3_fp16.safetensors realisticVisionV60B1_v51HyperVAE.safetensors sdxl-turbo sdxl-anime]
   }.freeze
 
   validates :ai_model_name, presence: true, inclusion: { in: SUPPORTED_AI_MODELS[:text] + SUPPORTED_AI_MODELS[:image] }

@@ -16,20 +16,19 @@ class AiChatsController < PrivateController
 
   # POST /ai/create
   def create
-    def create
-      @ai_chat = AiChat.build(user_id: current_user.id,
-                              chat_type: ai_message_params[:chat_type],
-                              # ^--- Set this new attribute
-                              ai_model_name: ai_message_params[:ai_model_name].presence || CreateAiChatMessageService::DEFAULT_MODEL_NAME,
-                              title: ai_message_params[:prompt].truncate(100))
+    @ai_chat = AiChat.build(user_id: current_user.id,
+                            chat_type: ai_message_params[:chat_type],
+                            # ^--- Set this new attribute
+                            ai_model_name: ai_message_params[:ai_model_name].presence || CreateAiChatMessageService::DEFAULT_MODEL_NAME,
+                            title: ai_message_params[:prompt].truncate(100))
 
-      respond_to do |format|
-        if @ai_chat.save
-          if @ai_chat.text?
-            CreateAiChatMessageJob.set(wait: 0.5.seconds).perform_later(ai_message_params[:prompt], @ai_chat.id)
-          else
-            CreateAiImageJob.set(wait: 0.5.seconds).perform_later(ai_message_params[:prompt], @ai_chat.id)
-          end
+    respond_to do |format|
+      if @ai_chat.save
+        if @ai_chat.text?
+          CreateAiChatMessageJob.set(wait: 0.5.seconds).perform_later(ai_message_params[:prompt], @ai_chat.id)
+        else
+          CreateAiImageJob.set(wait: 0.5.seconds).perform_later(ai_message_params[:prompt], @ai_chat.id)
+        end
 
         message = "Chat created, please wait for a response."
 
