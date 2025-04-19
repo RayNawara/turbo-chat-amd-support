@@ -20,7 +20,7 @@ Run
 /mnt/c/Windows/System32/ipconfig.exe /all
 ```
 in your WSL 2 Linux. Then look for (it should be at the bottom)
-
+```
 Ethernet adapter vEthernet (WSL (Hyper-V firewall)):
 
    Connection-specific DNS Suffix  . :
@@ -35,5 +35,5 @@ Ethernet adapter vEthernet (WSL (Hyper-V firewall)):
    DHCPv6 IAID . . . . . . . . . . . : 704648541
    DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-2A-80-FE-C6-D8-BB-C1-9A-B8-8A
    NetBIOS over Tcpip. . . . . . . . : Enabled
-
+```
 There's your IP address!
