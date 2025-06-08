@@ -20,7 +20,7 @@ class CreateAiChatMessageService
   prepend SimpleCommand
   include AiChats::Messageable
 
-  DEFAULT_MODEL_NAME = "llama3.2"
+  DEFAULT_MODEL_NAME = "llama3.1:latest"
 
   def initialize(prompt:, ai_chat_id: nil, user_id: nil)
     @ai_chat_id = ai_chat_id
