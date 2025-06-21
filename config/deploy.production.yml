@@ -33,6 +33,13 @@ registry:
 env:
   secret:
     - RAILS_MASTER_KEY
+    - IMAGE_GENERATION_URL
+    - IMAGE_GENERATION_AUTH_TOKEN
+    - IMAGE_GENERATION_TIMEOUT
+    - IMAGE_GENERATION_WIDTH
+    - IMAGE_GENERATION_HEIGHT
+    - IMAGE_GENERATION_PROMPT
+    - TEXT_GENERATION_URL
   clear:
     # Run the Solid Queue Supervisor inside the web server's Puma process to do jobs.
     # When you start using multiple servers, you should split out job processing to a dedicated machine.
