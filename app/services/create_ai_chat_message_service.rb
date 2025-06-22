@@ -55,7 +55,7 @@ class CreateAiChatMessageService
     ai_message = nil
     answer_chunks = []
 
-    llm.chat(messages:) do |response_chunk|
+    llm.chat(messages: messages, model: ai_chat.ai_model_name) do |response_chunk|
       unless ai_message
         remove_spinner
         ai_message = ai_chat.ai_messages.create!(prompt:, answer: "")

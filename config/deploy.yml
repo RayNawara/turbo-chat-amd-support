@@ -55,6 +55,9 @@ volumes:
 
 asset_path: /rails/public/assets
 
+ssh:
+  user: rjnawara
+
 # Configure the image builder.
 builder:
   arch: amd64
