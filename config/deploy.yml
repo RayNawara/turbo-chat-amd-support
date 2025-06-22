@@ -7,10 +7,10 @@ image: turbo_chat
 # Deploy to these servers.
 servers:
   web:
-    - 45.159.231.79
+    - 152.53.194.50
   # job:
   #   hosts:
-  #     - 45.159.231.79
+  #     - 152.53.194.50
   #   cmd: bin/jobs
 
 # Enable SSL auto certification via Let's Encrypt and allow for multiple apps on a single web server.
@@ -58,7 +58,7 @@ asset_path: /rails/public/assets
 # Configure the image builder.
 builder:
   arch: amd64
-  remote: ssh://45.159.231.79
+  remote: ssh://152.53.194.50
   context: .
 
 accessories:
@@ -67,4 +67,4 @@ accessories:
     port: 11434
     volumes:
       - ollama:/root/.ollama
-    host: 45.159.231.79
+    host: 152.53.194.50
