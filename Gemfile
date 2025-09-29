@@ -72,7 +72,7 @@ gem "cssbundling-rails", "~> 1.4"
 gem "simple_form", "~> 5.3"
 
 gem "langchainrb", "~> 0.19.5"
-gem "faraday", "~> 2.13"
+gem "faraday", "~> 2.14"
 
 gem "simple_command", "~> 1.0"
 
