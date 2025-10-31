@@ -345,8 +345,8 @@ GEM
       rubocop-rails (>= 2.30)
     ruby-progressbar (1.13.0)
     securerandom (0.4.1)
-    shoulda-matchers (6.5.0)
-      activesupport (>= 5.2.0)
+    shoulda-matchers (7.0.0)
+      activesupport (>= 7.1)
     simple_command (1.0.1)
     simple_form (5.4.0)
       actionpack (>= 7.0)
@@ -397,7 +397,7 @@ GEM
     unicode-display_width (3.1.4)
       unicode-emoji (~> 4.0, >= 4.0.4)
     unicode-emoji (4.0.4)
-    uri (1.0.4)
+    uri (1.1.0)
     useragent (0.16.11)
     vite_rails (3.0.19)
       railties (>= 5.1, < 9)
@@ -453,7 +453,7 @@ DEPENDENCIES
   rouge (~> 4.6)
   rspec-rails (~> 8.0.2)
   rubocop-rails-omakase
-  shoulda-matchers (~> 6.5)
+  shoulda-matchers (~> 7.0)
   simple_command (~> 1.0)
   simple_form (~> 5.4)
   solid_cable
