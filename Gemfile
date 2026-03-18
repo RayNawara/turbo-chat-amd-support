@@ -61,7 +61,7 @@ group :development do
   gem "web-console"
 end
 
-gem "vite_rails", "~> 3.0"
+gem "vite_rails", "~> 3.10"
 
 gem "devise", "~> 5.0"
 
