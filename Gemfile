@@ -77,5 +77,5 @@ gem "faraday", "~> 2.14"
 gem "simple_command", "~> 1.0"
 
 gem "redcarpet", "~> 3.6"
-gem "rouge", "~> 5.0"
+gem "rouge", "~> 5.1"
 gem "dotenv-rails"
